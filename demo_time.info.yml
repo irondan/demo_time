@@ -1,0 +1,5 @@
+name: Demo Time
+type: module
+description: 'Pages for creating Demos'
+package: DrupalCon
+core: 8.x

@@ -1,0 +1,49 @@
+demo_time.dt:
+  path: '/demotime'
+  defaults:
+    _controller: '\Drupal\demo_time\Controller\DemoTimeController::content'
+    _title: 'Demotime Demos'
+  requirements:
+    _permission: 'access content'
+demo_time.one:
+  path: '/demotime/one'
+  defaults:
+    _controller: '\Drupal\demo_time\Controller\DTOneController::content'
+    _title: 'Demotime Demos'
+  requirements:
+    _permission: 'access content'
+demo_time.oneplus:
+  path: '/demotime/oneplus'
+  defaults:
+    _controller: '\Drupal\demo_time\Controller\DTOnePlusController::content'
+    _title: 'Demotime Demos'
+  requirements:
+    _permission: 'access content'
+demo_time.two:
+  path: '/demotime/two'
+  defaults:
+    _controller: '\Drupal\demo_time\Controller\DTTwoController::content'
+    _title: 'Demotime Demos'
+  requirements:
+    _permission: 'access content'
+demo_time.three:
+  path: '/demotime/three'
+  defaults:
+    _controller: '\Drupal\demo_time\Controller\DTThreeController::content'
+    _title: 'Demotime Demos'
+  requirements:
+    _permission: 'access content'
+demo_time.four:
+  path: '/demotime/four'
+  defaults:
+    _controller: '\Drupal\demo_time\Controller\DTFourController::content'
+    _title: 'Demotime Demos'
+  requirements:
+    _permission: 'access content'
+demo_time.five:
+  path: '/demotime/five'
+  defaults:
+    _controller: '\Drupal\demo_time\Controller\DTFiveController::content'
+    _title: 'Demotime Demos'
+  requirements:
+    _permission: 'access content'
