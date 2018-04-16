@@ -3,7 +3,7 @@
 namespace Drupal\demo_time\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Dompdf\Dompdf;
+use mikehaertl\pdftk\Pdf;
 
 
 /**
@@ -16,30 +16,18 @@ class DTFiveController extends ControllerBase {
    */
   public function content() {
 
-    $markup = '';
+    // In my talk I made allusions to the idea that the best way to do this might be to use FPDI and FPDI_Protection
+    // Loading tha tlibrary is a bit of a mess; since we're already using PDFtk this can be done a lot more simply
 
-    $markup .= "<h2>Demo 1: Make a PDF from HTML</h2>";
-    $markup .= '<div style="border: 1px solid #000000; background-color: orange;">';
-    $markup .= "<p>Click the link below to render this HTML to a PDF</p>";
-    $markup .= '</div>';
-    $markup .= '<a href="/demotime/one">Click here!</a>';
+    $pdf = new Pdf($_SERVER['DOCUMENT_ROOT'] . base_path() .'/modules/custom/demo_time/files/html-sample.pdf');
 
-    // Example direct from https://github.com/dompdf/dompdf
+    $pdf->setUserPassword('passW0RD');
+    $pdf->passwordEncryption(128);
 
-    // instantiate and use the dompdf class
-    $dompdf = new Dompdf();
-    $dompdf->loadHtml($markup);
-
-    // (Optional) Setup the paper size and orientation
-    $dompdf->setPaper('Letter', 'landscape');
-
-    // Render the HTML as PDF
-    $dompdf->render();
-
-    // Output the generated PDF to Browser
-    $dompdf->stream();
+    $pdf->send();
 
     exit();
+
   }
 
 }

@@ -44,7 +44,7 @@ class DemoTimeController extends ControllerBase {
     $markup .= '<hr />';
 
     $markup .= "<h2>Demo 5: Put a Password on a PDF</h2>";
-    $markup .= '<p><a href="/demotime/five">Password protect a PDF!</a></p>';
+    $markup .= '<p><a href="/demotime/five">Password protect a PDF!</a> The password is <pre>passW0RD</pre></p>';
 
     $build = [
       '#markup' => $markup,
